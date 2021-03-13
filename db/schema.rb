@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_015132) do
+ActiveRecord::Schema.define(version: 2021_03_13_143728) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,29 @@ ActiveRecord::Schema.define(version: 2021_03_12_015132) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "article_comments", force: :cascade do |t|
+    t.integer "article_id"
+    t.string "gender"
+    t.string "age"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.integer "contributor_id"
+    t.integer "genre_id"
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "title"
+    t.text "body"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contributors", force: :cascade do |t|
@@ -39,6 +62,12 @@ ActiveRecord::Schema.define(version: 2021_03_12_015132) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_contributors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_contributors_on_reset_password_token", unique: true
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
