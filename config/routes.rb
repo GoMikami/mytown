@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :admin, controllers: {
-    sessions:      'admins/sessions',
+    sessions:      'admin/sessions',
   }
-  devise_for :contributors, controllers: {
-    registrations: 'contributors/registrations',
-    sessions:      'contributors/sessions'
+  
+  devise_for :contributor, controllers: {
+    registrations: 'contributor/registrations',
+    sessions:      'contributor/sessions'
   }
   
   root "homes#top"
-  get "about" => "homes#about"
-
+  get "homes/about" => "homes#about"
+  
   resources :contributors
   
   resources :articles
