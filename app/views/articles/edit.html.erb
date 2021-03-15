@@ -1,2 +1,30 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<h1>Editing Article</h1>
+<%= form_with model:@article, local:true do |f| %>
+
+  <div class="field">
+    <%= f.label :Prefecture %><br>
+    <%= f.text_field :prefecture_code %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :City %><br>
+    <%= f.text_field :address_city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Body %><br>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @article, class: "show_#{@article.id}" %> |
+<%= link_to 'Back', articles_path, class: "back" %>
