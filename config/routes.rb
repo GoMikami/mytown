@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   
   resources :contributors
   
-  resources :articles
-  
-  resources :article_comments
+  resources :articles do
+    resources :article_comments
+  end
   
   resources :genres
   
