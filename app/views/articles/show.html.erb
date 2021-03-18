@@ -1,2 +1,15 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<p><strong>Prefecture: </strong><%= @article.prefecture_code %></p>
+<p><strong>City: </strong><%= @article.address_city %></p>
+<p><strong>Title: </strong><%= @article.title %></p>
+<p><strong>Body: </strong><%= @article.body %></p>
+
+<%= link_to 'Edit', edit_article_path(@article), class: "edit_#{@article.id}" %> |
+<%= link_to 'Back', articles_path, class: "back" %>
+
+<div class="new-comment">
+  コメントをする
+<%= form_with(model:[@article, @article_comment], local: true) do |f| %>
+  <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+  <%= f.submit "送信する" %>
+<% end %>
+</div>

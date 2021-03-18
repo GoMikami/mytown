@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contributors/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :admin, controllers: {
     sessions:      'admin/sessions',
@@ -14,9 +15,9 @@ Rails.application.routes.draw do
   
   resources :contributors
   
-  resources :articles
-  
-  resources :article_comments
+  resources :articles do
+    resources :article_comments
+  end
   
   resources :genres
   

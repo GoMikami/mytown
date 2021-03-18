@@ -1,0 +1,20 @@
+ 
+ <table class='table'>
+   <tr>
+	  <th>name</th>
+	  <th><%= @contributor.name %></th>
+   </tr>
+   <tr>
+	  <th>gender</th>
+	  <th><%= @contributor.gender %></th>
+   </tr>
+   <tr>
+	  <th>age</th>
+	  <th><%= @contributor.age %></th>
+   </tr>
+   <tr>
+	  <th>introduction</th>
+	  <th><%= @contributor.introduction %></th>
+   </tr>
+ </table>
+ <%= link_to 'Edit', edit_contributor_path(@contributor), class: "edit_#{@contributor.id}" %> 
