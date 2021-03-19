@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>Picture</th>
+      <th>Contributor</th>
       <th>Prefecture</th>
       <th>city</th>
       <th>Title</th>
@@ -15,6 +17,8 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= attachment_image_tag(article, :image, :fill, 100, 100, fallback: "no-image.jpg") %></td>
+        <td><%= image_tag('no_image.jpg') %></td>
         <td><%= article.prefecture_code %></td>
         <td><%= article.address_city %></td>
         <td><%= article.title %></td>

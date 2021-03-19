@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
 
+before_action :ensure_correct_contributor, only: [:update, :edit]
+
   def new
-   @article = Article.new 
+    @article = Article.new 
   end
   
   def index
@@ -12,11 +14,13 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @new_Article = Article.new
+    @contributor = Contributor.find(@article.contributor_id)
     @article_comment = ArticleComment.new
   end
 
   def create
     @article = Article.new(article_params)
+    @article.contributor_id = current_contributor.id
     if @article.save
       redirect_to article_path(@article), notice: "You have created article successfully."
     else
@@ -47,7 +51,14 @@ class ArticlesController < ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:postcode, :prefecture_code, :address_city, :address_street, :title, :body, :image_id)
+    params.require(:article).permit(:postcode, :prefecture_code, :address_city, :address_street, :title, :body, :image)
+  end
+  
+  def ensure_correct_contributor
+    @article = Article.find(params[:id])
+    unless @article.contributor == current_contributor
+      redirect_to articles_path
+    end
   end
 
 end
