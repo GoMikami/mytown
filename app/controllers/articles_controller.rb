@@ -51,7 +51,7 @@ before_action :ensure_correct_contributor, only: [:update, :edit]
   private
   
   def article_params
-    params.require(:article).permit(:postcode, :prefecture_code, :address_city, :address_street, :title, :body, :image_id)
+    params.require(:article).permit(:postcode, :prefecture_code, :address_city, :address_street, :title, :body, :image)
   end
   
   def ensure_correct_contributor

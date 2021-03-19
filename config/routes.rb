@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :contributors
   
   resources :articles do
-    resources :article_comments
+    resources :article_comments, only: [:create, :destroy]
   end
   
   resources :genres
