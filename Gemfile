@@ -79,3 +79,9 @@ gem 'font-awesome-sass', '~> 5.13'
 
 # 住所検索機能
 # gem 'jp_prefecture'
+
+# deploy
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
