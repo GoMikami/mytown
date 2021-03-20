@@ -1,0 +1,45 @@
+<div>
+  <h2>Contributors</h2>
+  <div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Contributor ID</th>
+            <th>Nickname</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th></th>
+            <th>E-mail</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @contributors.each do |contributor| %>
+            <tr>
+              <td>
+                <%= contributor.id %>
+              </td>
+              <td>
+                <%= link_to admin_contributor_path(contributor) do %>
+                  <%= contributor.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= contributor.gender%>
+              </td>
+              <td>
+                <%= contributor.age %>
+              </td>
+              <td></td>
+              <td>
+                <%= contributor.email %>
+              </td>
+              <td></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

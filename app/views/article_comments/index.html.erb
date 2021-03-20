@@ -1,2 +1,14 @@
-<h1>ArticleComments#index</h1>
-<p>Find me in app/views/article_comments/index.html.erb</p>
+  <% article_comments.each do |article_comment| %>
+  <%= link_to contributor_path(article_comment.contributor) do %>
+
+  <% end %>
+  <%= article_comment.article %>
+  <% if article_comment.contributor == current_contributor %>
+    <%= link_to "Destroy", article_article_comment_path(article_comment.artcle, article_comment), method: :delete, class: "btn btn-sm btn-danger", remote: true %>
+  <% end %>
+  <p>
+  <%= link_to article_path(article_comment.contributor) do %>
+    <%= article_comment.contributor.name %>
+  <% end %>
+  <p>
+<% end %>
