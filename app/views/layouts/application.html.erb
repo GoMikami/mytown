@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Mytown</title>
     <%= csrf_meta_tags %>
@@ -10,10 +10,16 @@
   </head>
 
   <body>
+    <div class="header">
     <%= render 'layouts/header' %>
-      <main>
-        <%= yield %>
-      </main>
+    </div>
+    <div class="main-visual">
+      <%= yield %>
+    </div>
+    <div class="footer">
     <%= render 'layouts/footer' %>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

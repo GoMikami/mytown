@@ -1,3 +1,52 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index
+.articles{
+    position: relative;
+}
+
+.h1{
+    position: absolute;
+    left: 10px;
+    top: 130px;
+}
+
+.h3{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+// show
+.article{
+    position: relative;
+}
+
+.detail{
+    position: absolute;
+    left: 10px;
+    padding-bottom: 50px;
+}
+
+.comments{
+    position: absolute;
+    right: 30px;
+}
+
+.new-comment{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+// new
+.new-article{
+    position: relative;
+}
+
+.form{
+    position: absolute;
+    left: 30px;
+}

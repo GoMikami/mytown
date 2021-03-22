@@ -16,4 +16,58 @@
 //font領域設定  
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.header{
+ width: auto;
+ height: 120px;
+ display: flex;
+ text-align: center;
+}
+
+.header-top{
+ width: auto;
+ height: 60px;
+ margin: auto;
+}
+
+.header-bottom{
+ width: auto;
+ height: 60px;
+ margin: 0 auto;
+}
+
+.nav-list {
+ text-align: center;
+ padding: 60px 20px;
+ margin: 0 10 0 auto;
+}
+
+.nav-list-item {
+ list-style: none;
+ display: inline-block;
+ margin: 0 0 0 auto;
+}
  
+.main-visual {
+ width: auto;
+ height: 400px;
+ margin: 0 0 auto;
+ background-color: orange;
+}
+
+.footer {
+ width: auto;
+ height: 100px;
+ text-align: center;
+ line-height:120px;
+}
+
+.menu{
+  
+}
