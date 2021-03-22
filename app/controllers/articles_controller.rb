@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-before_action :ensure_correct_contributor, only: [:update, :edit]
+before_action :ensure_correct_contributor, only: [:create, :update, :edit]
 
   def new
     @article = Article.new 
