@@ -6,7 +6,7 @@ class ArticleCommentsController < ApplicationController
     @comment.contributor_id = current_contributor.id
     @comment.article_id = @article.id
     @comment.save
-    redirect_to article_path(article)
+    redirect_to article_path(@article)
   end
     
   def destroy

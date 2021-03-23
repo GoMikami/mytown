@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
 
-before_action :ensure_correct_contributor, only: [:create, :update, :edit]
 
   def new
     @article = Article.new 
@@ -54,11 +53,6 @@ before_action :ensure_correct_contributor, only: [:create, :update, :edit]
     params.require(:article).permit(:postcode, :prefecture_code, :address_city, :address_street, :title, :body, :image)
   end
   
-  def ensure_correct_contributor
-    @article = Article.find(params[:id])
-    unless @article.contributor == current_contributor
-      redirect_to articles_path
-    end
-  end
+
 
 end
